@@ -19,7 +19,10 @@ public class Party : IEnumerable<Hero>
 
     public IEnumerator<Hero> GetEnumerator()
     {
-        return _party.GetEnumerator();
+        foreach (var hero in _party)
+        {
+            yield return hero;
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()

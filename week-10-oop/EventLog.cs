@@ -12,7 +12,10 @@ public class EventLog : IEnumerable<GameEvent>
     }
     public IEnumerator<GameEvent> GetEnumerator()
     {
-        return _events.GetEnumerator();
+        foreach (var gameEvent in _events)
+        {
+            yield return gameEvent;
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()

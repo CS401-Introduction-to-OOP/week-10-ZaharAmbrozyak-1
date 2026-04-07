@@ -16,7 +16,7 @@ public class Hero
         }
     }
 
-    public Role role;
+    public Role Role;
 
     public int Level
     {
@@ -72,7 +72,7 @@ public class Hero
     }
     public string GetRole()
     {
-        switch (role)
+        switch (Role)
         {
             case Role.Archer:
                 return "Archer";
@@ -123,5 +123,15 @@ public class Hero
     public override string ToString()
     {
         return $"{Name} - {GetRole()} lvl {Level}, {CurrentHp}/{MaxHp}. {GetStatus()}";
+    }
+
+    public Hero(string name, Role role, int level = 0, int maxHp = 100, int goldAmount = 0)
+    {
+        Name = name;
+        Role = role;
+        Level = level;
+        MaxHp = maxHp;
+        CurrentHp = maxHp;
+        GoldAmount = goldAmount;
     }
 }

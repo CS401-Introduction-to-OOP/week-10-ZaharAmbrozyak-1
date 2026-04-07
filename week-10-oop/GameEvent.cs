@@ -16,7 +16,7 @@ public class GameEvent
         }
     }
     
-    public string description
+    public string Description
     {
         get;
         set
@@ -54,6 +54,14 @@ public class GameEvent
     }
     public override string ToString()
     {
-        return $"{TurnNumber} - {description}. {StatChange}";
+        return $"{TurnNumber} - {Description}. {StatChange}";
+    }
+
+    public GameEvent(int turnNumber, string description, EventType eventType, int statChange)
+    {
+        TurnNumber = turnNumber;
+        Description = description;
+        EventType = eventType;
+        StatChange = statChange;
     }
 }

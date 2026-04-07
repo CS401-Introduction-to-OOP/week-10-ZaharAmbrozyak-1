@@ -1,11 +1,29 @@
+using System.Collections;
+
 namespace week_10_oop;
 
-public class Party
+public class Party : IEnumerable<Hero>
 {
-    private List<Hero> party = [];
+    private List<Hero> _party;
 
+    public Party()
+    {
+        _party = [];
+    }
+    
     public void AddMember(Hero hero)
     {
-        party.Add(hero);
+        _party.Add(hero);
+    }
+
+
+    public IEnumerator<Hero> GetEnumerator()
+    {
+        return _party.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }

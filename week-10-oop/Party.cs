@@ -29,4 +29,15 @@ public class Party : IEnumerable<Hero>
     {
         return GetEnumerator();
     }
+
+    IEnumerable<Hero> GetAliveHeroes()
+    {
+        foreach (var hero in _party)
+        {
+            if (hero.Status is HeroStatus.Alive)
+            {
+                yield return hero;
+            }
+        }
+    }
 }

@@ -101,11 +101,11 @@ public class Hero
         }
     }
 
-    public HeroStatus HeroStatus;
+    public HeroStatus Status;
 
     public string GetStatus()
     {
-        switch (HeroStatus)
+        switch (Status)
         {
             case HeroStatus.Alive:
                 return "Alive";

@@ -101,20 +101,27 @@ public class Hero
         }
     }
 
-    public Status status;
+    public HeroStatus HeroStatus;
 
     public string GetStatus()
     {
-        switch (status)
+        switch (HeroStatus)
         {
-            case Status.Alive:
+            case HeroStatus.Alive:
                 return "Alive";
-            case Status.Dead:
+            case HeroStatus.Dead:
                 return "Dead";
-            case Status.Enraged:
+            case HeroStatus.Enraged:
                 return "Enraged";
-            case Status.Stunned:
+            case HeroStatus.Stunned:
                 return "Stunned";
+            default:
+                throw new ArgumentException("Unknown hero status");
         }
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} - {GetRole()} lvl {Level}, {CurrentHp}/{MaxHp}. {GetStatus()}";
     }
 }

@@ -40,4 +40,26 @@ public class Party : IEnumerable<Hero>
             }
         }
     }
+
+    IEnumerable<Hero> GetDeadHeroes()
+    {
+        foreach (var hero in _party)
+        {
+            if (hero.Status is HeroStatus.Dead)
+            {
+                yield return hero;
+            }
+        }
+    }
+
+    IEnumerable<Hero> GetFullHpHeroes()
+    {
+        foreach (var hero in _party)
+        {
+            if (hero.CurrentHp == hero.MaxHp)
+            {
+                yield return hero;
+            }
+        }
+    }
 }

@@ -119,7 +119,7 @@ public class Hero
                 throw new ArgumentException("Unknown hero status");
         }
     }
-
+    
     public override string ToString()
     {
         return $"{Name} - {GetRole()} lvl {Level}, {CurrentHp}/{MaxHp}. {GetStatus()}";

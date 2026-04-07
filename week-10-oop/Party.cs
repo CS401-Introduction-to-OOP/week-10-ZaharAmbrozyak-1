@@ -30,7 +30,7 @@ public class Party : IEnumerable<Hero>
         return GetEnumerator();
     }
 
-    IEnumerable<Hero> GetAliveHeroes()
+    public IEnumerable<Hero> GetAliveHeroes()
     {
         foreach (var hero in _party)
         {
@@ -41,7 +41,7 @@ public class Party : IEnumerable<Hero>
         }
     }
 
-    IEnumerable<Hero> GetDeadHeroes()
+    public IEnumerable<Hero> GetDeadHeroes()
     {
         foreach (var hero in _party)
         {
@@ -52,7 +52,7 @@ public class Party : IEnumerable<Hero>
         }
     }
 
-    IEnumerable<Hero> GetFullHpHeroes()
+    public IEnumerable<Hero> GetFullHpHeroes()
     {
         foreach (var hero in _party)
         {
